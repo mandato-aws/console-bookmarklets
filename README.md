@@ -2,7 +2,7 @@
 Web Browser Bookmarklets for the AWS Console.
 The bookmarklets available here are intended to further enhance the Web Console experience by adding additional functionality.
 
-## List of Bookmarkets
+## List of Bookmarklets
 
 - [S3 Downloader](/s3-downloader/README.md)
 
