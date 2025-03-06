@@ -25,7 +25,12 @@ function downloadS3(rowStart,rowEnd,delaySeconds=1){
   }
 }
 
-let secondsDelay = prompt("BEFORE PROCEEDING, MAKE SURE NONE OF THE ROWS ARE CHECKED.\nEnter the number of seconds between downloads.\n\nTIP: Setup your browser to automatically download files before you continue.\n\nDO NOT NAVIGATE AWAY FROM THIS PAGE UNTIL DOWNLOADS FINISHED.\n\nNOTE: Folders will not be downloaded.", "1");
+let confirmRes = confirm("BEFORE PROCEEDING, MAKE SURE NONE OF THE ROWS ARE CHECKED.\n\nNOTE: Folders will not be downloaded.\n\nTIP: Setup your browser to automatically download files before you continue.\n\nDO NOT NAVIGATE AWAY FROM THIS PAGE UNTIL DOWNLOADS FINISHED.");
+if( confirmRes != true ) {
+  return;
+}
+
+let secondsDelay = prompt("Seconds between downloads:", "1");
 if( secondsDelay == null ) { return; }
 const regex1 = /^(\d+)$/g;
 let matches1 = regex1.exec(secondsDelay);
@@ -34,7 +39,7 @@ if( matches1 == null || matches1.length < 2 ) {
     return;
 }
 secondsDelay = parseInt(secondsDelay);
-let startRange = prompt("Enter the start row number (first row is 1).\nEnter a dash followed by another row number to specify a start-end range.\nThe next 50 rows are downloaded if no end range is specified.\n\nExamples:\n  1  downloads rows 1-50\n  101-160  downloads rows 101-160", "1");
+let startRange = prompt("Enter the start row number (first row is 1).\nEnter a dash followed by another row number to specify a start-end range.\nThe next 50 rows are downloaded if no end range is specified.\n\nExamples:\n  1  downloads rows 1-50\n  101-160  downloads rows 101-160\n\nStart row number / start-end range:", "1");
 if( startRange == null ) { return; }
 if( secondsDelay < 1 )
   secondsDelay = 1;

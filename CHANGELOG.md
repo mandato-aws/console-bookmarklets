@@ -11,6 +11,11 @@ Each list item started with a minus (-) character. Tabs may be used to indent th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres (somewhat) to [Semantic Versioning](VERSIONING.md).
 
+## [1.0.1] - 2025-03-06
+S3 Download Bookmarklet updated
+
+- Updated bookmarklet to start with a confirm message
+- Updated link to Angelo's blog post documenting the S3 Downloader Bookmarklet
 
 ## [1.0] - 2025-03-06
 S3 Download Bookmarklet
